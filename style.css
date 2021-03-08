@@ -1,0 +1,134 @@
+/* * {
+    border: 1px solid black;
+} */
+
+#firstcontainer * {
+    float       : left;
+    margin-right: 10px;
+    width       : 100px;
+    height      : 100px;
+}
+
+
+/* Tout les éléments de type div */
+#firstcontainer div {
+    border-radius: 50%;
+}
+
+/* Les éléments de type div de premier niveau */
+/* #firstcontainer > div { 
+    border-radius: 50%;
+} */
+
+/* .colorOne {
+    background-color: red;
+}
+
+.colorTwo {
+    background-color: blue;
+}
+.colorTree {
+    background-color: green;
+}
+.colorFour {
+    background-color: yellow;
+}
+.colorFive {
+    background-color: orange;
+}
+.colorSix {
+    background-color: purple;
+} */
+
+
+
+
+/* #firstcontainer *:first-child {
+    background-color: red;
+}
+
+#firstcontainer *:nth-child(2) {
+    background-color: blue;
+}
+
+#firstcontainer *:nth-child(3) {
+    background-color: green;
+}
+
+#firstcontainer *:nth-child(4) {
+    background-color: yellow;
+}
+
+#firstcontainer *:nth-child(5) {
+    background-color: orange;
+}
+
+#firstcontainer *:last-child {
+    background-color: purple;
+} */
+
+#firstcontainer div:first-child {
+    background-color: red;
+}
+
+#firstcontainer div:nth-child(2) {
+    background-color: blue;
+}
+
+#firstcontainer div:nth-child(3) {
+    background-color: green;
+}
+
+#firstcontainer span:nth-child(4) {
+    background-color: yellow;
+}
+
+#firstcontainer span:nth-child(5) {
+    background-color: orange;
+}
+
+#firstcontainer span:last-child {
+    background-color: purple;
+}
+
+p {
+    font-weight: bold;
+}
+/* 
+p::before {
+    content: "<--";
+    color  : #444;
+}
+
+p::after {
+    content: "❤️-->>";
+    color  : #444;
+} */
+
+/* .40prc::after {
+    content: "soldes -40%";
+    color  : #444;
+} */
+
+/* Le premier p (ou élément) qui a pour parent direct l'id firstcontainer */
+#firstcontainer+p {
+    color: red;
+}
+
+/* Les prochains p (ou élément) qui a pour parent l'id firstcontainer */
+#firstcontainer~p {
+    color: red;
+}
+
+/* Bootstrap style */
+
+.row div {
+    border          : 1px solid #eee;
+    padding         : 10px;
+    background-color: #CAD2F5;
+    color           : #fff;
+}
+
+/* .dropdown:hover .dropdown-menu {
+    display: block;
+} */
