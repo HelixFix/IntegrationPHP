@@ -23,35 +23,21 @@
                     <li class="nav-item">
                         <a href="index.php?page=home" class="nav-link">Accueil</a>
                     </li>
-                    
-                <li class="nav-item dropdown">
-
-                    <a href="#" role="button" class="nav-link dropdown-toggle" data-mdb-toggle="dropdown" id="ssproduits" aria-expanded="true">Mes produits</a>
-
-                    <ul class="dropdown-menu" aria-labelledby="ssproduits">
-
-                        <li class="dropdown-item"><a href="index.php?page=produits&id=A">Paragraphe 1</a></li>
-                        <li class="dropdown-item"><a href="index.php?page=produits&id=B">Paragraphe 2</a></li>
-                        <li class="dropdown-item"><a href="index.php?page=produits&id=C">Paragraphe 3</a></li>
-
-                    </ul>
-                </li>
-
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">L'équipe</a>
-                </li>
 
                     <li class="nav-item">
-                        <a href="index.php?page=societe" class="nav-link">La société</a>
+                        <a href="index.php?page=produits" class="nav-link">Produits</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="index.php?page=produits" class="nav-link">Nos produits</a>
+                        <a href="index.php?page=societe" class="nav-link">Société</a>
                     </li>
 
                     <li class="nav-item">
                         <a href="index.php?page=contact" class="nav-link">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php?page=gestion" class="nav-link">Gestion</a>
                     </li>
 
                 </ul>
