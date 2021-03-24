@@ -1,5 +1,3 @@
-<?php $_SESSION['user']['nom'] = "Dupond"; ?>
-
 <div class="container">
 
     <!-- Si le formulaire n'a pas été envoyé on l'affiche -->
