@@ -5,8 +5,8 @@
 ?>
 
     <div class="container">
-        <div class="row" ">
-        <h2>Liste des produits</h2>
+        <div class="row body">
+            <h2>Liste des produits</h2>
             <?php
             while ($ligne = $tblWebinaire->fetch()) {
                 // var_dump($ligne)
@@ -45,7 +45,7 @@
     $requete = "SELECT * FROM produits WHERE categorie = '$_POST[selectProduit]'";
     $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
     // var_dump($tblWebinaire);
-   
+
 
     echo "foo $_POST[selectProduit] bar";
 ?>
@@ -53,9 +53,9 @@
     <div class="container">
 
         <div class="row">
-        <h2>Liste de <?php echo $_POST['selectProduit'] ?></h2>
-           
-        <?php
+            <h2>Liste de <?php echo $_POST['selectProduit'] ?></h2>
+
+            <?php
             while ($ligne2 = $tblWebinaire->fetch()) {
                 // var_dump($ligne)
                 // $date = utf8_encode(strftime("%A %d %B %G", strtotime($ligne['date'])));

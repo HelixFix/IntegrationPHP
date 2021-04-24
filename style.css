@@ -2,6 +2,12 @@
     display: block;
 } */
 
+.body {
+    min-height: 100vh;
+    height: 100%;
+}
+
+
 /* navbar */
 
 nav {
@@ -123,15 +129,41 @@ li.active a {
 
 .row .btnHome {
     background-color: #FE5746;
-    color           : white;
-    font-weight     : 900;
-    font-size       : .95rem;
-    letter-spacing  : .13rem;
-  }
+    color: white;
+    font-weight: 900;
+    font-size: .95rem;
+    letter-spacing: .13rem;
+    box-shadow: none;
+}
 
 .row .btnHome:hover {
-    color: #001466;
-  }
+    color: white;
+    box-shadow: none;
+}
+
+/* footer */
+
+.footerHome {
+    background-color: #FFE5E4;
+}
+
+.footerHome h5 {
+    color: #FF557E;
+    font-size     : 2.5rem;
+    letter-spacing: .1rem;
+    margin-bottom : 1.5rem;
+    font-weight   : 300;
+}
+
+.para {
+    font-weight: 400;
+    color: #083B4C;
+    font-size: 1.2rem;
+}
+
+.footerHome>p {
+    margin-bottom: 3rem;
+}
 
 /* produit */
 

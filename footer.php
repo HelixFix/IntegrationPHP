@@ -41,9 +41,12 @@
                     <h5>Contact </h5>
 
                     <p>
-                        Mister Fruit, Assistante de formation
+                        Jérôme Rinner - Développeur Full-Stack
                         <br>
                         be.fruit@alsace.fr
+                        <br>
+                        <a style="padding-left: 0px;padding-right: 0px;" href="https://github.com/HelixFix">GitHub</a>
+                        
                         <br>
                         03 89 00 00 00
                     </p>
@@ -57,8 +60,8 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2021 Copyright:
-            <a class="text-dark" href=#">Web Service</a>
-            SIRET 778 952 176 00023
+            <a class="text-dark" href=#">Fruit Service</a>
+            SIRET 123 456 789 01234
         </div>
         <!-- Copyright -->
     </footer>

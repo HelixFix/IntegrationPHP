@@ -9,7 +9,7 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 
 <div class="container">
 
-	<div class="row">
+	<div class="row body">
 
 		<div class=" bg-image">
 
@@ -19,7 +19,7 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 		<div class="col-lg-6 col-md-6 col-sm-6 col-6">
 			<button onclick="affInfo(1);">Chaud</button>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+		<div class="col">
 			<button onclick="affInfo(2);">Froid</button>
 		</div>
 

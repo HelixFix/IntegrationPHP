@@ -7,7 +7,7 @@ $requete = "SELECT * FROM `produits` WHERE id_produit = " . $_GET['id'];
 
     <div class="container">
 
-        <div class="row">
+        <div class="row body">
            
 
 
