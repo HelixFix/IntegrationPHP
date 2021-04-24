@@ -26,6 +26,8 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 	
 	<div id="resultframeAJAX">
 	</div>
+
+	<H1>NOUVEAUTES</H1>
 	<?php
 	while ($ligne = $tblWebinaire->fetch()) {
 		// var_dump($ligne)
@@ -34,9 +36,9 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 	?>
 
 
-		<div class="col-lg-6 col-md-6 col-sm-6 col-12">
+		<div class="">
 
-			<div class="card mb-3" style="max-width: 540px;">
+			<div class="card " >
 				<div class="row no-gutters">
 					<div class="col-md-4">
 						<img src="https://loremflickr.com/640/360" class="card-img" alt="...">
