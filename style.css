@@ -102,7 +102,7 @@ li.active a {
 /* card */
 
 .row .card {
-    border: 3px solid #dea702;
+    border: 3px solid #FF557E;
     margin-bottom: 25px;
 }
 
@@ -120,6 +120,25 @@ li.active a {
     -webkit-box-orient: vertical;
     min-height: 100px;
 }
+
+.row {
+    /* padding-left: 74px; */
+}
+
+
+/* produit */
+
+.small {
+    /* height: 185px; */
+    width: 185px;
+}
+
+.large {
+
+    width: 750px;
+    height: 440px;
+}
+
 
 
 

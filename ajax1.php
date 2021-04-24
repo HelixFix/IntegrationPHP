@@ -28,5 +28,22 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 
 if ($_GET['idprd'] == 2) {
 
-    echo "Rouge/Vert/Bleu";
-}
+    $requete = "SELECT * FROM `produits` WHERE type = 'chaud'";
+    $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
+    // var_dump($tblWebinaire);?>
+
+    <form method="post" action="index.php?page=produits">
+
+        <select name="selectProduit" class="browser-default custom-select">
+            <option selected>Open this select menu</option>
+            <?php  while ($ligne = $tblWebinaire->fetch()) {?>
+            <option value="<?php echo $ligne['id_produit']?>"><?php echo $ligne['nom']?></option>
+     <?php } ?>
+        </select>
+        <button type="submit" name="subrche" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+        
+
+    </form>
+<?php } ?>

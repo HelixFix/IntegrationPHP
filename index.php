@@ -21,7 +21,7 @@ $db = new PDO('mysql:host=localhost;dbname=cours_php', 'root', '');
     <link href = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel = "stylesheet" />
     <!-- MDB -->
     <link href = "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.1.0/mdb.min.css" rel = "stylesheet" />
-    <title>Site dynamique</title>
+    <title>Const Temp</title>
 </head>
 
 <?php include('menu.php'); ?>
@@ -31,17 +31,5 @@ $db = new PDO('mysql:host=localhost;dbname=cours_php', 'root', '');
 else echo "404 La page " . $_GET['page'] . " n'existe pas."; ?>
 
 
-<br>
-<br>
-<?php if (isset($_SESSION['user']['nom'])) echo "Ma variable de session " . $_SESSION['user']['nom']; ?>
-
-<br>
-<br>
-<?php if (!isset($_SESSION['popup'])) {
-
-    echo "Affiche La pub";
-    $_SESSION['popup'] = 1;
-
-} ?>
 
 <?php include('footer.php'); ?>
