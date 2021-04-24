@@ -48,6 +48,8 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 							<h5 class="card-title"><?php echo $ligne['nom'] ?></h5>
 							<p class="card-text"><?php echo $ligne['description'] ?></p>
 							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+							<a target="_blank rel=noopener" href="index.php?page=contact" class="btn btnHome">contact</a>
+                            <a target="_blank rel=noopener" href="index.php?page=details&id=<?php echo $ligne['id_produit']; ?>" class="btn btnHome">détails</a>
 						</div>
 					</div>
 				</div>

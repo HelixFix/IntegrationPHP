@@ -19,7 +19,7 @@
             </a>
             </li>
 
-            <?php if ($_GET['page'] == 'produits') { ?>
+            <?php if ($_GET['page'] == 'produits' || $_GET['page'] == 'details') { ?>
                 <li class="nav-item active"><?php } else { ?>
 
                 <li class="nav-item ">

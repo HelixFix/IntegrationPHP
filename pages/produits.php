@@ -6,6 +6,7 @@
 
     <div class="container">
         <div class="row" ">
+        <h2>Liste des produits</h2>
             <?php
             while ($ligne = $tblWebinaire->fetch()) {
                 // var_dump($ligne)
@@ -29,7 +30,7 @@
                             </p>
 
                             <a target="_blank rel=noopener" href="index.php?page=contact" class="btn btnHome">contact</a>
-                            <a target="_blank rel=noopener" href="index.php?page=produits&id=<?php echo $ligne['id_produit']; ?>" class="btn btnHome">détails</a>
+                            <a target="_blank rel=noopener" href="index.php?page=details&id=<?php echo $ligne['id_produit']; ?>" class="btn btnHome">détails</a>
                         </div>
                     </div>
                 </div>
@@ -41,66 +42,52 @@
     </div>
 
 <?php } else {
-    $requete = "SELECT * FROM `produits` WHERE id_produit = " . $_POST['selectProduit'];
+    $requete = "SELECT * FROM produits WHERE categorie = '$_POST[selectProduit]'";
     $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
     // var_dump($tblWebinaire);
-    $ligne = $tblWebinaire->fetch()
+   
+
+    echo "foo $_POST[selectProduit] bar";
 ?>
 
     <div class="container">
 
         <div class="row">
+        <h2>Liste de <?php echo $_POST['selectProduit'] ?></h2>
            
+        <?php
+            while ($ligne2 = $tblWebinaire->fetch()) {
+                // var_dump($ligne)
+                // $date = utf8_encode(strftime("%A %d %B %G", strtotime($ligne['date'])));
+
+            ?>
 
 
-                <div id="left" class="col-lg-8 col-md-8 col-sm-8 col-8">
-                    <div class="titre"><?php echo $ligne['nom'] ?></div>
-                    <div class="photo">
-                        <img src="images/placeholder.png" alt="" class="large">
-                    </div>
-                    <div class="miniatures">
-                        <img src="images/placeholder.png" alt="..." class="img-thumbnail small">
-                        <img src="images/placeholder.png" alt="..." class="img-thumbnail small">
-                        <img src="images/placeholder.png" alt="..." class="img-thumbnail small">
-                        <img src="images/placeholder.png" alt="..." class="img-thumbnail small">
-                    </div>
-                    <div class="descriptif"><?php echo $ligne['description'] ?>
-                </div>
-                
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
 
 
+                    <div class="card">
+                        <img class="card-img-top" src="https://loremflickr.com/640/360" alt="Card image cap">
 
+                        <div class="card-body">
+                            <!-- <p class=""><small class="text-muted">Diffusé le <?php echo $date ?></small></p> -->
 
+                            <h3 class="card-title"><?php echo $ligne2['nom'] ?></h3>
 
-                </div>
+                            <p class="card-text clamp" onclick="(function(){classList.toggle('clamp')})()" ?><?php echo $ligne2['description'] ?>
+                            </p>
 
-                <div id="right" class="col">
-                    <div class="caracteristique">
-                        <div>Prix : <?php echo $ligne['prix'] ?></div>
-
-                        <div>Type : <?php echo $ligne['type'] ?></div>
-
-                        <div>Etat : <?php echo $ligne['etat'] ?></div>
-                        
+                            <a target="_blank rel=noopener" href="index.php?page=contact" class="btn btnHome">contact</a>
+                            <a target="_blank rel=noopener" href="index.php?page=details&id=<?php echo $ligne2['id_produit']; ?>" class="btn btnHome">détails</a>
+                        </div>
                     </div>
                 </div>
-          
+            <?php } ?>
         </div>
 
 
 
     </div>
-
-    <div class="grid-container">
-
-
-    </div>
-
-
-
-
-
-
 
 
 <?php } ?>
