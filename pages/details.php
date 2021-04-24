@@ -36,7 +36,11 @@ $requete = "SELECT * FROM `produits` WHERE id_produit = " . $_GET['id'];
                 <div id="right" class="col">
                     <div class="caracteristique">
                     <h3>Caractéristiques</h3>
-                        <div>Prix : <?php echo $ligne['prix'] ?></div>
+
+                    <div>Catégorie : <?php echo $ligne['categorie'] ?></div>
+
+
+                        <div>Prix : <?php echo $ligne['prix'] ?> €</div>
 
                         <div>Type : <?php echo $ligne['type'] ?></div>
 
@@ -54,4 +58,4 @@ $requete = "SELECT * FROM `produits` WHERE id_produit = " . $_GET['id'];
     <div class="grid-container">
 
 
-    </div> ?>
+    </div>
