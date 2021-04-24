@@ -14,7 +14,8 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 		<div class=" bg-image">
 
 		</div>
-
+		<br>
+		<br>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-6">
 			<button onclick="affInfo(1);">Chaud</button>
 		</div>
@@ -26,7 +27,7 @@ $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la d
 	
 	<div id="resultframeAJAX">
 	</div>
-
+<br>
 	<H1>NOUVEAUTES</H1>
 	<?php
 	while ($ligne = $tblWebinaire->fetch()) {

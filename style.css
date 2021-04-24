@@ -49,7 +49,7 @@ li a .icon .fa {
 }
 
 li a .icon .fa:last-child {
-    color: #083B4C;
+    color: #001466;
 }
 
 li a:hover .icon .fa {
@@ -85,7 +85,7 @@ li a .name span:before {
     left: 0;
     width: 100%;
     height: 100%;
-    color: #083B4C;
+    color: #001466;
 }
 
 li a:hover .name span {
@@ -121,10 +121,17 @@ li.active a {
     min-height: 100px;
 }
 
-.row {
-    /* padding-left: 74px; */
-}
+.row .btnHome {
+    background-color: #FE5746;
+    color           : white;
+    font-weight     : 900;
+    font-size       : .95rem;
+    letter-spacing  : .13rem;
+  }
 
+.row .btnHome:hover {
+    color: #001466;
+  }
 
 /* produit */
 
@@ -142,6 +149,8 @@ li.active a {
 
 
 
+
+
 /* hero */
 
 .bg-image {
@@ -150,4 +159,5 @@ li.active a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-bottom: 20px;
 }
