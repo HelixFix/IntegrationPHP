@@ -132,3 +132,82 @@ p::after {
 /* .dropdown:hover .dropdown-menu {
     display: block;
 } */
+
+/* navbar */
+
+ul li {
+    list-style  : none;
+    text-align  : center;
+    display     : block;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  ul li a {
+    text-decoration: none;
+    padding        : 0 50px;
+    display        : block;
+  }
+  
+  ul li a .icon {
+    width     : 40px;
+    height    : 40px;
+    text-align: center;
+    overflow  : hidden;
+    margin    : 0 auto 10px;
+  }
+  
+  ul li a .icon .fa {
+    width      : 100%;
+    height     : 100%;
+    line-height: 40px;
+    font-size  : 34px;
+    transition : 0.5s;
+    color      : #dea702;
+  }
+  
+  ul li a .icon .fa:last-child {
+    color: #083B4C;
+  }
+  
+  ul li a:hover .icon .fa {
+    transform: translateY(-100%);
+  }
+  
+  .name {
+    text-transform: uppercase;
+    font-weight   : 800;
+    font-size     : .8rem;
+    letter-spacing: .15rem;
+    text-align    : center;
+    color         : #dea702;
+    position      : relative;
+    height        : 20px;
+    width         : 100%;
+    display       : block;
+    overflow      : hidden;
+  }
+  
+  ul li a .name span {
+    display    : block;
+    position   : relative;
+    line-height: 20px;
+    transition : 0.5s;
+  
+  }
+  
+  ul li a .name span:before {
+    content : attr(data-text);
+    position: absolute;
+    top     : -100%;
+    left    : 0;
+    width   : 100%;
+    height  : 100%;
+    color   : #083B4C;
+  }
+  
+  ul li a:hover .name span {
+    transform: translateY(20px);
+  }
+
+  
