@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+
+$db = new PDO('mysql:host=localhost;dbname=cours_php', 'root', '');
+
+
+?>
 
 <?php if (!isset($_GET['page'])) $_GET['page'] = 'home'; ?>
 <!--Si la valeur n'existe pas attribue la valeur home par défault -->
