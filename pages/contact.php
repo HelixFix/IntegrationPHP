@@ -5,6 +5,12 @@
 
         <form method="post" action="">
 
+            <!-- Address input -->
+            <div class="form-outline mb-4">
+                <input type="text" name="adddest" id="form4Example2" class="form-control" required />
+                <label class="form-label" for="form4Example2">Votre adresse postal</label>
+            </div>
+
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <input type="email" name="maildest" id="form4Example2" class="form-control" required />
@@ -28,6 +34,12 @@
             </div>
 
             <br>
+
+            <!-- Téléphone input -->
+            <div class="form-outline mb-4">
+                <input type="numeric" name="maildest" id="form4Example2" class="form-control" required />
+                <label class="form-label" for="form4Example2">Numéro de téléphone</label>
+            </div>
 
             <!-- Message input -->
             <div class="form-outline mb-4">
