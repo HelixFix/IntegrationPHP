@@ -1,5 +1,9 @@
 <div class="container">
 
+    <div class="bg-image">
+
+    </div>
+
     <form method="post" action="">
 
         <!-- Default radio -->
@@ -77,7 +81,7 @@
         let tabsPane = tabHeader.getElementsByTagName("div");
 
         for (let i = 0; i < tabsPane.length; i++) {
-            tabsPane[i].addEventListener("click", function () {
+            tabsPane[i].addEventListener("click", function() {
                 tabHeader.getElementsByClassName("active")[0].classList.remove("active");
                 tabsPane[i].classList.add("active");
                 tabBody.getElementsByClassName("active")[0].classList.remove("active");
