@@ -4,54 +4,58 @@
 
 .body {
     min-height: 100vh;
-    height: 100%;
+    height    : 100%;
 }
 
 
 /* navbar */
 
 nav {
-    display: flex;
+    display        : flex;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
     /* min-height: 100vh; */
+}
+
+h1 {
+    text-align: center;
 }
 
 .nav-item {
     position: relative;
-    display: flex;
+    display : flex;
 }
 
 /* li {
-    list-style: none;
-    text-align: center;
-    display: block;
+    list-style  : none;
+    text-align  : center;
+    display     : block;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 } */
 
 
 a {
     text-decoration: none;
-    padding: 0 50px;
-    display: block;
-    position: relative;
+    padding        : 0 50px;
+    display        : block;
+    position       : relative;
 }
 
 li a .icon {
-    width: 40px;
-    height: 40px;
+    width     : 40px;
+    height    : 40px;
     text-align: center;
-    overflow: hidden;
-    margin: 0 auto 10px;
+    overflow  : hidden;
+    margin    : 0 auto 10px;
 }
 
 li a .icon .fa {
-    width: 100%;
-    height: 100%;
+    width      : 100%;
+    height     : 100%;
     line-height: 40px;
-    font-size: 34px;
-    transition: 0.5s;
-    color: #FF557E;
+    font-size  : 34px;
+    transition : 0.5s;
+    color      : #FF557E;
 }
 
 li a .icon .fa:last-child {
@@ -64,34 +68,34 @@ li a:hover .icon .fa {
 
 .name {
     text-transform: uppercase;
-    font-weight: 800;
-    font-size: .8rem;
+    font-weight   : 800;
+    font-size     : .8rem;
     letter-spacing: .15rem;
-    text-align: center;
-    color: #FF557E;
-    position: relative;
-    height: 20px;
-    width: 100%;
-    display: block;
-    overflow: hidden;
+    text-align    : center;
+    color         : #FF557E;
+    position      : relative;
+    height        : 20px;
+    width         : 100%;
+    display       : block;
+    overflow      : hidden;
 }
 
 li a .name span {
-    display: block;
-    position: relative;
+    display    : block;
+    position   : relative;
     line-height: 20px;
-    transition: 0.5s;
+    transition : 0.5s;
 
 }
 
 li a .name span:before {
-    content: attr(data-text);
+    content : attr(data-text);
     position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: #001466;
+    top     : -100%;
+    left    : 0;
+    width   : 100%;
+    height  : 100%;
+    color   : #001466;
 }
 
 li a:hover .name span {
@@ -107,37 +111,69 @@ li.active a {
 
 /* card */
 
+.solde {
+    position        : absolute;
+    background-color: #FF557E;
+    left            : -10px;
+    width           : 50px;
+}
+
+.solde2 {
+    position        : absolute;
+    background-color: #FF557E;
+    top             : 15px;
+    left            : -10px;
+    width           : 50px;
+}
+
+#chaud {
+    width: 100%;
+    background-color:#001466;
+    color: #FFE5E4;
+    margin-bottom: 50px;
+    border: 0;
+}
+
+#froid {
+    width: 100%;
+    background-color:#FE5746;
+    color: #FFE5E4;
+    border: 0;
+}
+
 .row .card {
-    border: 3px solid #FF557E;
+    border       : 3px solid #FF557E;
     margin-bottom: 25px;
+    left         : 10px;
+    position     : relative;
 }
 
 .img-top {
 
-    display: block;
-    margin-left: auto;
+    display     : block;
+    margin-left : auto;
     margin-right: auto
 }
 
 .clamp {
-    overflow: hidden;
-    display: -webkit-box;
+    overflow          : hidden;
+    display           : -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    min-height: 100px;
+    min-height        : 100px;
 }
 
 .row .btnHome {
     background-color: #FE5746;
-    color: white;
-    font-weight: 900;
-    font-size: .95rem;
-    letter-spacing: .13rem;
-    box-shadow: none;
+    color           : white;
+    font-weight     : 900;
+    font-size       : .95rem;
+    letter-spacing  : .13rem;
+    box-shadow      : none;
 }
 
 .row .btnHome:hover {
-    color: white;
+    color     : white;
     box-shadow: none;
 }
 
@@ -148,7 +184,7 @@ li.active a {
 }
 
 .footerHome h5 {
-    color: #FF557E;
+    color         : #FF557E;
     font-size     : 2.5rem;
     letter-spacing: .1rem;
     margin-bottom : 1.5rem;
@@ -157,8 +193,8 @@ li.active a {
 
 .para {
     font-weight: 400;
-    color: #083B4C;
-    font-size: 1.2rem;
+    color      : #083B4C;
+    font-size  : 1.2rem;
 }
 
 .footerHome>p {
@@ -174,7 +210,7 @@ li.active a {
 
 .large {
 
-    width: 750px;
+    width : 750px;
     height: 440px;
 }
 
@@ -186,10 +222,10 @@ li.active a {
 /* hero */
 
 .bg-image {
-    background-image: url("images/Hero.png");
-    height: 400px;
+    background-image : url("images/Hero.png");
+    height           : 400px;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin-bottom: 20px;
+    background-size  : cover;
+    position         : relative;
+    margin-bottom    : 20px;
 }

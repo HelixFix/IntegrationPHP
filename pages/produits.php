@@ -24,6 +24,7 @@
                         <div class="card-body">
                             <!-- <p class=""><small class="text-muted">Diffusé le <?php echo $date ?></small></p> -->
 
+                            <div class="solde2">-7%</div>
                             <h3 class="card-title"><?php echo $ligne['nom'] ?></h3>
 
                             <p class="card-text clamp" onclick="(function(){classList.toggle('clamp')})()" ?><?php echo $ligne['description'] ?>
@@ -66,12 +67,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
 
 
+
                     <div class="card">
                         <img class="card-img-top" src="https://loremflickr.com/640/360" alt="Card image cap">
 
                         <div class="card-body">
                             <!-- <p class=""><small class="text-muted">Diffusé le <?php echo $date ?></small></p> -->
-
+                            <div class="solde2">-7%</div>
                             <h3 class="card-title"><?php echo $ligne2['nom'] ?></h3>
 
                             <p class="card-text clamp" onclick="(function(){classList.toggle('clamp')})()" ?><?php echo $ligne2['description'] ?>
