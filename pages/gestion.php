@@ -7,6 +7,11 @@ $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' 
 
 $tblpd = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
 
+$requeteChaud = "SELECT COUNT(*) as total  FROM `produits` WHERE type LIKE 'chaud' ";
+$countChaud = $db->query($requeteChaud);
+
+$requeteFroid = "SELECT COUNT(*) as total  FROM `produits` WHERE type LIKE 'froid' ";
+$countFroid = $db->query($requeteFroid);
 
 ?>
 <!--
@@ -32,7 +37,7 @@ Liste des produits<br>
 
 <tr>
     <!-- <td><a href="index.php?page=formprd&idprd=">Modifier</a> --><?php //echo $ligne['id_produit']; 
-                                                                ?></td>
+                                                                        ?></td>
     <td><?php //echo $ligne['nom']; 
         ?></td>
     <td><?php //echo $ligne['description']; 
@@ -54,9 +59,17 @@ Liste des produits<br>
     <div class="row">
         <div class="col-sm-6">
             <h2>Gestion <b>Produits</b></h2>
+
+            <?php while ($donnees = $countChaud->fetch()) {
+                echo '<h3>' . $donnees['total'] . ' produit(s) chaud</h3>';
+            } ?>
+            <?php while ($donnees = $countFroid->fetch()) {
+                echo '<h3>' . $donnees['total'] . ' produit(s) froid</h3>';
+            } ?>
         </div>
         <div class="col-sm-6">
             <a href="index.php?page=formprd" class="btn btn-success" data-toggle="modal"><span>Ajout nouveau produit</span></a>
+
         </div>
     </div>
 </div>
@@ -69,6 +82,9 @@ Liste des produits<br>
             <th>Nom</th>
             <th>Descriptif</th>
             <th>Prix</th>
+            <th>Type</th>
+            <th>Etat</th>
+            <th>Cat.</th>
         </tr>
     </thead>
     <tbody>
@@ -80,6 +96,9 @@ Liste des produits<br>
                 <td><?php echo $ligne['nom']; ?></td>
                 <td><?php echo $ligne['description']; ?></td>
                 <td><?php echo $ligne['prix']; ?></td>
+                <td><?php echo $ligne['type']; ?></td>
+                <td><?php echo $ligne['etat']; ?></td>
+                <td><?php echo $ligne['categorie']; ?></td>
 
             </tr>
         <?php } ?>

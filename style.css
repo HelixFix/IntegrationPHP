@@ -127,7 +127,7 @@ li.active a {
     width           : 50px;
 }
 
-#chaud {
+#froid {
     width: 100%;
     background-color:#001466;
     color: #FFE5E4;
@@ -135,7 +135,7 @@ li.active a {
     border: 0;
 }
 
-#froid {
+#chaud {
     width: 100%;
     background-color:#FE5746;
     color: #FFE5E4;

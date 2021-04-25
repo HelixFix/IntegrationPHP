@@ -64,7 +64,7 @@
                         </a>
                         </li>
 
-                        <?php if ($_GET['page'] == 'gestion') { ?>
+                        <?php if ($_GET['page'] == 'gestion' || $_GET['page'] == 'formprd') { ?>
                             <li class="nav-item active">
                             <?php } else { ?>
 

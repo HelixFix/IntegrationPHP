@@ -15,7 +15,7 @@ if (isset($_POST['subprd'])) { // Si il y a un submit
     if ($_POST['idprd'] > 0) { // Si ID supérieur à 0 on modifie un produit
 
         $requete = "UPDATE `produits` 
-        SET `nom`= '" .addslashes($_POST['nomprd']) . "',`description` = '" .addslashes($_POST['descrprd']) . "', `prix` = '" . strtr($_POST['prixprd'], $trans) . "' 
+        SET `nom`= '" .addslashes($_POST['nomprd']). "',`type` = '" .addslashes($_POST['typeprd']). "',`etat` = '" .addslashes($_POST['etatprd']). "',`categorie` = '" .addslashes($_POST['catprd']) . "',`description` = '" .addslashes($_POST['descrprd']) . "', `prix` = '" . strtr($_POST['prixprd'], $trans) . "' 
         WHERE `id_produit` = " . $_POST['idprd'];
 
         // addslashes echappe les apostrophes et guillements
@@ -27,15 +27,15 @@ if (isset($_POST['subprd'])) { // Si il y a un submit
 
     } else { // Sinon on fait une insertion
 
-        $requete = "INSERT INTO `produits`( `nom`, `description`, `prix`) 
-        VALUES ('" .addslashes($_POST['nomprd']) . "','" .addslashes($_POST['descrprd']) . "', '" . strtr($_POST['prixprd'], $trans) . "')";
+        $requete = "INSERT INTO `produits`( `nom`, `description`, `prix`, `type`, `etat`, `categorie`) 
+        VALUES ('" .addslashes($_POST['nomprd']) . "','" .addslashes($_POST['descrprd']) . "', '" . strtr($_POST['prixprd'], $trans) . "','" .addslashes($_POST['typeprd']) . "','" .addslashes($_POST['etatprd']) . "','" .addslashes($_POST['catprd']) . "')";
 
         $db->query($requete); // Exécute la requete
 
         echo "Votre produit est maintenant dans la base.<br>";
     }
 
-    echo "<a href='index.php?page=produits'>Retour à la liste.</a>";
+    echo "<a href='index.php?page=gestion'>Retour à la liste.</a>";
 }
 // Test si un idprd dans l'url
 if (isset($_GET['idprd'])) {
@@ -73,6 +73,39 @@ if (isset($_GET['idprd'])) {
         <div class="form-outline mb-4">
             <input type="text" name="nomprd" id="form6Example3" class="form-control" required value="<?php if (isset($_GET['idprd']))  echo stripslashes($tblresult[0]['nom']); ?>"> <!-- stripslashes pour ne pas afficher les slash -->
             <label class="form-label" for="form6Example3" style="margin-left: 0px;">Nom du produit<label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 97.6px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+        </div>
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+            <input type="text" name="typeprd" id="form6Example3" class="form-control" required value="<?php if (isset($_GET['idprd']))  echo stripslashes($tblresult[0]['type']); ?>"> <!-- stripslashes pour ne pas afficher les slash -->
+            <label class="form-label" for="form6Example3" style="margin-left: 0px;">Type du produit<label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 97.6px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+        </div>
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+            <input type="text" name="etatprd" id="form6Example3" class="form-control" required value="<?php if (isset($_GET['idprd']))  echo stripslashes($tblresult[0]['etat']); ?>"> <!-- stripslashes pour ne pas afficher les slash -->
+            <label class="form-label" for="form6Example3" style="margin-left: 0px;">Etat du produit<label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 97.6px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+        </div>
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+            <input type="text" name="catprd" id="form6Example3" class="form-control" required value="<?php if (isset($_GET['idprd']))  echo stripslashes($tblresult[0]['categorie']); ?>"> <!-- stripslashes pour ne pas afficher les slash -->
+            <label class="form-label" for="form6Example3" style="margin-left: 0px;">Catégorie du produit<label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
                         <div class="form-notch-middle" style="width: 97.6px;"></div>
