@@ -6,7 +6,7 @@ if ($_GET['idprd'] == 1) { ?>
     <?php
 
 
-    $requete = "SELECT * FROM `produits` WHERE type = 'froid'";
+    $requete = "SELECT * FROM `produits` WHERE type = 'chaud'";
     $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
     // var_dump($tblWebinaire);
     ?>
@@ -14,8 +14,7 @@ if ($_GET['idprd'] == 1) { ?>
     <form method="post" action="index.php?page=produits">
 
         <select name="selectProduit" class="browser-default custom-select">
-            <option value="fruit">Fruits</option>
-            <option value="legume">Légumes</option>
+            <option value="chaud">Chaud</option>
         </select>
         <button type="submit" name="subrche" class="btn btn-primary">
             <i class="fas fa-search"></i>
@@ -27,7 +26,7 @@ if ($_GET['idprd'] == 1) { ?>
 
 if ($_GET['idprd'] == 2) {
 
-    $requete = "SELECT * FROM `produits` WHERE type = 'chaud'";
+    $requete = "SELECT * FROM `produits` WHERE type = 'froid'";
     $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
     // var_dump($tblWebinaire);
 ?>
@@ -40,10 +39,9 @@ if ($_GET['idprd'] == 2) {
             <option value="<?php echo $ligne['id_produit'] ?>"><?php echo $ligne['nom'] ?></option>
      <?php } ?> -->
         <select name="selectProduit" class="browser-default custom-select">
-            <option selected>Open this select menu</option>
-
-            <option value="fruit">Fruits</option>
-            <option value="gateau">Gateau</option>
+        
+            <option value="froid">Froid</option>
+            
 
         </select>
         <button type="submit" name="subrche" class="btn btn-primary">

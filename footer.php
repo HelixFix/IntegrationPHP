@@ -58,7 +58,7 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center p-3" style="background-color: rgba(255, 0, 0, 0.5);">
             © 2021 Copyright:
             <a class="text-dark" href=#">Fruit Service</a>
             SIRET 123 456 789 01234

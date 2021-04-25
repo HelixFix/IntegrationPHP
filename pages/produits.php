@@ -42,7 +42,7 @@
     </div>
 
 <?php } else {
-    $requete = "SELECT * FROM produits WHERE categorie = '$_POST[selectProduit]'";
+    $requete = "SELECT * FROM produits WHERE type = '$_POST[selectProduit]'";
     $tblWebinaire = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
     // var_dump($tblWebinaire);
 
@@ -53,7 +53,7 @@
     <div class="container">
 
         <div class="row">
-            <h2>Liste de <?php echo $_POST['selectProduit'] ?></h2>
+            <h2>Liste de produits <?php echo $_POST['selectProduit'] ?></h2>
 
             <?php
             while ($ligne2 = $tblWebinaire->fetch()) {
