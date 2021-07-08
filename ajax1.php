@@ -33,11 +33,6 @@ if ($_GET['idprd'] == 2) {
 
     <form method="post" action="index.php?page=produits">
 
-        <!-- <select name="selectProduit" class="browser-default custom-select">
-            <option selected>Open this select menu</option>
-            <?php while ($ligne = $tblWebinaire->fetch()) { ?>
-            <option value="<?php echo $ligne['id_produit'] ?>"><?php echo $ligne['nom'] ?></option>
-     <?php } ?> -->
         <select name="selectProduit" class="browser-default custom-select">
         
             <option value="froid">Froid</option>
