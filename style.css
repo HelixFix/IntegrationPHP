@@ -106,9 +106,15 @@ li a:hover .name span {
 li.active a {
 
     background: #FFE5E4;
-
-
 }
+
+nav ul
+{
+list-style: none;
+padding-left: 0;
+margin: 0;
+}
+
 
 /* card */
 

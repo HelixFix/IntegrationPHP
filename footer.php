@@ -3,15 +3,6 @@
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<!-- <script type="text/javascript">
-        $(document).ready(function(){
-            $('li').on('click', function(){
-                $(this).siblings().removeClass('active');
-                $(this).addClass('active');
-            })
-        })
-        </script> -->
-
 
 <footer class="footerHome">
     <footer class="text-center text-lg-start">
@@ -24,9 +15,9 @@
                     <h5>Où nous trouver ?</h5>
 
                     <span>
-                        <b>
+                        <strong>
                             I want to be fruit
-                        </b>
+                        </strong>
                     </span>
 
                     <p>

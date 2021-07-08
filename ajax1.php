@@ -17,7 +17,7 @@ if ($_GET['idprd'] == 1) { ?>
             <option value="chaud">Chaud</option>
         </select>
         <button type="submit" name="subrche" class="btn btn-primary">
-            <i class="fas fa-search"></i>
+            <em class="fas fa-search"></em>
         </button>
 
 
@@ -45,7 +45,7 @@ if ($_GET['idprd'] == 2) {
 
         </select>
         <button type="submit" name="subrche" class="btn btn-primary">
-            <i class="fas fa-search"></i>
+            <em class="fas fa-search"></em>
         </button>
 
 

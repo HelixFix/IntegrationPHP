@@ -22,7 +22,6 @@
                         <img class="card-img-top" src="https://loremflickr.com/640/360" alt="Card image cap">
 
                         <div class="card-body">
-                            <!-- <p class=""><small class="text-muted">Diffusé le <?php echo $date ?></small></p> -->
 
                             <div class="solde2">-7%</div>
                             <h3 class="card-title"><?php echo $ligne['nom'] ?></h3>
@@ -72,7 +71,7 @@
                         <img class="card-img-top" src="https://loremflickr.com/640/360" alt="Card image cap">
 
                         <div class="card-body">
-                            <!-- <p class=""><small class="text-muted">Diffusé le <?php echo $date ?></small></p> -->
+
                             <div class="solde2">-7%</div>
                             <h3 class="card-title"><?php echo $ligne2['nom'] ?></h3>
 

@@ -14,42 +14,6 @@ $requeteFroid = "SELECT COUNT(*) as total  FROM `produits` WHERE type LIKE 'froi
 $countFroid = $db->query($requeteFroid);
 
 ?>
-<!--
-Liste des produits<br>
-<br>
-<a href="index.php?page=formprd">Créer un nouveau produit</a>
-
-<table>
-    <tr>
-        <th>Actions</th>
-        <th>Nom</th>
-        <th>Descriptif</th>
-        <th>Prix</th>
-    </tr>
-
-    -->
-
-
-<?php
-
-// while ($ligne = $tblpd->fetch()) { 
-?>
-
-<tr>
-    <!-- <td><a href="index.php?page=formprd&idprd=">Modifier</a> --><?php //echo $ligne['id_produit']; 
-                                                                        ?></td>
-    <td><?php //echo $ligne['nom']; 
-        ?></td>
-    <td><?php //echo $ligne['description']; 
-        ?></td>
-    <td><?php //echo $ligne['prix']; 
-        ?></td>
-</tr>
-
-<?php // } 
-?>
-
-
 
 </table>
 
@@ -58,7 +22,7 @@ Liste des produits<br>
 <div class="table-title">
     <div class="row">
         <div class="col-sm-6">
-            <h2>Gestion <b>Produits</b></h2>
+            <h2>Gestion <strong>Produits</strong></h2>
 
             <?php while ($donnees = $countChaud->fetch()) {
                 echo '<h3>' . $donnees['total'] . ' produit(s) chaud</h3>';
@@ -75,16 +39,17 @@ Liste des produits<br>
 </div>
 
 <table class="table table-striped table-hover">
+<caption>Un tableau de produits</caption>
     <thead>
         <tr>
 
-            <th>Action</th>
-            <th>Nom</th>
-            <th>Descriptif</th>
-            <th>Prix</th>
-            <th>Type</th>
-            <th>Etat</th>
-            <th>Cat.</th>
+            <th scope="col">Action</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Descriptif</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Type</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Cat.</th>
         </tr>
     </thead>
     <tbody>
@@ -92,7 +57,7 @@ Liste des produits<br>
 
         while ($ligne = $tblpd->fetch()) { ?>
             <tr>
-                <td><a href="index.php?page=formprd&idprd=<?php echo $ligne['id_produit']; ?>">Modifier</a></td>
+                <th scope="row"><a href="index.php?page=formprd&idprd=<?php echo $ligne['id_produit']; ?>">Modifier</a></th>
                 <td><?php echo $ligne['nom']; ?></td>
                 <td><?php echo $ligne['description']; ?></td>
                 <td><?php echo $ligne['prix']; ?></td>
@@ -105,6 +70,3 @@ Liste des produits<br>
 
     </tbody>
 </table>
-
-
-<!-- Je suis sur la page du produit: <b><?php echo $_GET['id']; ?></b> -->

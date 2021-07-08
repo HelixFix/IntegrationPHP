@@ -1,4 +1,6 @@
 <div class="container">
+    
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42919.73167111793!2d7.290605117492282!3d47.75268062369011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47919b6c1d88946b%3A0x40a5fb99a393360!2sMulhouse!5e0!3m2!1sfr!2sfr!4v1625757663544!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Carte de Mulhouse"></iframe>
 
     <!-- Si le formulaire n'a pas été envoyé on l'affiche -->
     <?php if (isset($_POST['maildest']) == null) { ?>
@@ -69,11 +71,13 @@
         $mailheaders .= "X-abuse-contact: abuse@1and1.fr\n";
         $mailheaders .= "X-auth-smtp-user: pierre@iziasys.com\n";
 
-        if ($_POST['pays'] == '') mail($_POST['maildest'], 'Un e-mail de votre site Internet', $_POST['contmail'], $mailheaders);
+        if ($_POST['pays'] == '') {
+            mail($_POST['maildest'], 'Un e-mail de votre site Internet', $_POST['contmail'], $mailheaders);
+        }
     ?>
 
         <!-- Sinon on dit : -->
-        <b>Merci de nous avoir contacter votre message sera traité rapidement.</b>
+        <strong>Merci de nous avoir contacter votre message sera traité rapidement.</strong>
 
     <?php } ?>
 
