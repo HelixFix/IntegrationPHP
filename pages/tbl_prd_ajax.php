@@ -5,8 +5,20 @@
 $db = new PDO('mysql:host=localhost;dbname=cours_php', 'root', '');
 //var_dump($db);
 //print_r($db->errorInfo());
-$requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY prix ".$_GET['order'].""; 
 
+
+
+if($_GET['order'] === 'vide') {
+    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL"; 
+ 
+} else{
+
+    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY prix ".$_GET['order'].""; 
+
+}
+
+// echo $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL  ".$order.""; 
+// $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY prix ".$_GET['order'].""; 
 $tblpd = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
 
 $requeteChaud = "SELECT COUNT(*) as total  FROM `produits` WHERE type LIKE 'chaud' ";
@@ -26,7 +38,7 @@ $countFroid = $db->query($requeteFroid);
             <th scope="col">Action</th>
             <th scope="col">Nom</th>
             <th scope="col">Descriptif</th>
-            <th scope="col">Prix</th>
+            <th scope="col" style="padding-left:0 "><button>⬆</button> Prix <button>⬇</button></th>
             <th scope="col">Type</th>
             <th scope="col">Etat</th>
             <th scope="col">Cat.</th>

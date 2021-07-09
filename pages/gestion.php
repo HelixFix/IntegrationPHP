@@ -15,6 +15,8 @@ $countFroid = $db->query($requeteFroid);
 
 ?>
 
+<body onload="showtbl('vide')"> 
+
 </table>
 
 <br>
@@ -45,21 +47,16 @@ $countFroid = $db->query($requeteFroid);
 
 
 <script type="text/javascript">
+
     function showtbl(order) {
-        // console.log('in deleteprod');
-        // $('.fondnoir').show(); // display content
-        // $('.infobulle').show(); // display content
-        // $('.infobulle').html(idprod);
-        
-        // console.log(order);
+   
         $('#tbl_product').html("")
 
         $.ajax({
                 url     : 'pages/tbl_prd_ajax.php?order='+ order,
                 dataType: 'html',
                 cache   : false,
-                type    : "GET",                     // ou GET
-                data: "ordre=" +order,
+                type    : "GET",
                 success: function(url) {
                     $('#tbl_product').append(url);
                 }
