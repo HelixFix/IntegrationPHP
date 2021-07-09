@@ -8,17 +8,26 @@ $db = new PDO('mysql:host=localhost;dbname=cours_php', 'root', '');
 
 
 
-if($_GET['order'] === 'vide') {
-    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL"; 
- 
-} else{
+if(isset($_GET['filter']) && $_GET['filter'] === 'chaud') {
+    $requete = "SELECT * FROM `produits` WHERE `type` = 'chaud' AND (`deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL)"; 
 
-    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY prix ".$_GET['order'].""; 
-
+} else if (isset($_GET['filter']) && $_GET['filter'] === 'froid') {
+    $requete = "SELECT * FROM `produits` WHERE `type` = 'froid' AND (`deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL)"; 
 }
 
-// echo $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL  ".$order.""; 
-// $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY prix ".$_GET['order'].""; 
+if(isset($_GET['filter']) && isset($_GET['order'])) {
+    $requete = "SELECT * FROM `produits` WHERE `type` = '".$_GET['filter']."' AND (`deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL) ORDER BY `prix` ".$_GET['order'].""; 
+}
+
+
+ if ($_GET['filter'] === 'vide' && isset($_GET['order'])) {
+    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL ORDER BY `prix` ".$_GET['order']." "; 
+}else if($_GET['filter'] === 'vide') {
+    $requete = "SELECT * FROM `produits` WHERE `deleted_at` > '2020-01-01 00:00:00' OR `deleted_at` IS NULL"; 
+}
+
+
+
 $tblpd = $db->query($requete); // Enregistre la requete efectuer sur la db dans une variable
 
 $requeteChaud = "SELECT COUNT(*) as total  FROM `produits` WHERE type LIKE 'chaud' ";
@@ -30,7 +39,6 @@ $countFroid = $db->query($requeteFroid);
 
 ?>
 
-
 <caption>Un tableau de produits</caption>
     <thead>
         <tr>
@@ -38,13 +46,15 @@ $countFroid = $db->query($requeteFroid);
             <th scope="col">Action</th>
             <th scope="col">Nom</th>
             <th scope="col">Descriptif</th>
-            <th scope="col" style="padding-left:0 "><button>⬆</button> Prix <button>⬇</button></th>
+            <th scope="col" style="padding-left:0 "><button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')">⬇</button></th>
             <th scope="col">Type</th>
             <th scope="col">Etat</th>
             <th scope="col">Cat.</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
+
+
         <?php
 
         while ($ligne = $tblpd->fetch()) { ?>
@@ -61,3 +71,22 @@ $countFroid = $db->query($requeteFroid);
         <?php } ?>
 
     </tbody>
+
+    <script type="text/javascript">
+
+    function filterPrice(filter, order) {
+   
+        $('#tbl_product').html("")
+
+        $.ajax({
+                url     : 'pages/tbl_prd_ajax.php?filter='+ filter+'&order='+order,
+                dataType: 'html',
+                cache   : false,
+                type    : "GET",
+                success: function(url) {
+                    $('#tbl_product').append(url);
+                }
+            })
+
+    }
+</script>

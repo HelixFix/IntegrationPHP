@@ -39,28 +39,31 @@ $countFroid = $db->query($requeteFroid);
         </div>
     </div>
 </div>
-<a href="javascript:showtbl('asc');">Ascendant</a>
-<a href="javascript:showtbl('desc');">Descendant</a>
+<a href="javascript:showtbl('chaud');">Chaud</a>
+<a href="javascript:showtbl('froid');">Froid</a>
 <table class="table table-striped table-hover" id="tbl_product">
+
 
 </table>
 
 
 <script type="text/javascript">
 
-    function showtbl(order) {
+    function showtbl(filter) {
    
         $('#tbl_product').html("")
 
         $.ajax({
-                url     : 'pages/tbl_prd_ajax.php?order='+ order,
+                url     : 'pages/tbl_prd_ajax.php?filter='+ filter,
                 dataType: 'html',
                 cache   : false,
                 type    : "GET",
                 success: function(url) {
                     $('#tbl_product').append(url);
                 }
-            })
-
+        })
+    
     }
+
+
 </script>
