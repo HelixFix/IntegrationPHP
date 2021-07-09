@@ -37,36 +37,33 @@ $countFroid = $db->query($requeteFroid);
         </div>
     </div>
 </div>
+<a href="javascript:showtbl('asc');">Ascendant</a>
+<a href="javascript:showtbl('desc');">Descendant</a>
+<table class="table table-striped table-hover" id="tbl_product">
 
-<table class="table table-striped table-hover">
-<caption>Un tableau de produits</caption>
-    <thead>
-        <tr>
-
-            <th scope="col">Action</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Descriptif</th>
-            <th scope="col">Prix</th>
-            <th scope="col">Type</th>
-            <th scope="col">Etat</th>
-            <th scope="col">Cat.</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-
-        while ($ligne = $tblpd->fetch()) { ?>
-            <tr>
-                <th scope="row"><a href="index.php?page=formprd&idprd=<?php echo $ligne['id_produit']; ?>">Modifier</a></th>
-                <td><?php echo $ligne['nom']; ?></td>
-                <td><?php echo $ligne['description']; ?></td>
-                <td><?php echo $ligne['prix']; ?></td>
-                <td><?php echo $ligne['type']; ?></td>
-                <td><?php echo $ligne['etat']; ?></td>
-                <td><?php echo $ligne['categorie']; ?></td>
-
-            </tr>
-        <?php } ?>
-
-    </tbody>
 </table>
+
+
+<script type="text/javascript">
+    function showtbl(order) {
+        // console.log('in deleteprod');
+        // $('.fondnoir').show(); // display content
+        // $('.infobulle').show(); // display content
+        // $('.infobulle').html(idprod);
+        
+        // console.log(order);
+        $('#tbl_product').html("")
+
+        $.ajax({
+                url     : 'pages/tbl_prd_ajax.php?order='+ order,
+                dataType: 'html',
+                cache   : false,
+                type    : "GET",                     // ou GET
+                data: "ordre=" +order,
+                success: function(url) {
+                    $('#tbl_product').append(url);
+                }
+            })
+
+    }
+</script>
