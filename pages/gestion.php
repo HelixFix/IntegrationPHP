@@ -15,55 +15,53 @@ $countFroid = $db->query($requeteFroid);
 
 ?>
 
-<body onload="showtbl('vide')"> 
+<body onload="showtbl('vide')">
 
-</table>
+    </table>
 
-<br>
+    <br>
+    <div class="container">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Gestion <strong>Produits</strong></h2>
 
-<div class="table-title">
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>Gestion <strong>Produits</strong></h2>
+                    <?php while ($donnees = $countChaud->fetch()) {
+                        echo '<h3>' . $donnees['total'] . ' produit(s) chaud</h3>';
+                    } ?>
+                    <?php while ($donnees = $countFroid->fetch()) {
+                        echo '<h3>' . $donnees['total'] . ' produit(s) froid</h3>';
+                    } ?>
+                </div>
+                <div class="col-sm-6">
+                    <a href="index.php?page=formprd" class="btn btn-success" data-toggle="modal"><span>Ajout nouveau produit</span></a>
 
-            <?php while ($donnees = $countChaud->fetch()) {
-                echo '<h3>' . $donnees['total'] . ' produit(s) chaud</h3>';
-            } ?>
-            <?php while ($donnees = $countFroid->fetch()) {
-                echo '<h3>' . $donnees['total'] . ' produit(s) froid</h3>';
-            } ?>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <a href="index.php?page=formprd" class="btn btn-success" data-toggle="modal"><span>Ajout nouveau produit</span></a>
 
-        </div>
+        <a href="javascript:showtbl('chaud');">Chaud</a>
+        <a href="javascript:showtbl('froid');">Froid</a>
+        <table class="table table-striped table-hover" id="tbl_product">
+
+
+        </table>
     </div>
-</div>
-<a href="javascript:showtbl('chaud');">Chaud</a>
-<a href="javascript:showtbl('froid');">Froid</a>
-<table class="table table-striped table-hover" id="tbl_product">
 
+    <script type="text/javascript">
+        function showtbl(filter) {
 
-</table>
+            $('#tbl_product').html("")
 
-
-<script type="text/javascript">
-
-    function showtbl(filter) {
-   
-        $('#tbl_product').html("")
-
-        $.ajax({
-                url     : 'pages/tbl_prd_ajax.php?filter='+ filter,
+            $.ajax({
+                url: 'pages/tbl_prd_ajax.php?filter=' + filter,
                 dataType: 'html',
-                cache   : false,
-                type    : "GET",
+                cache: false,
+                type: "GET",
                 success: function(url) {
                     $('#tbl_product').append(url);
                 }
-        })
-    
-    }
+            })
 
-
-</script>
+        }
+    </script>

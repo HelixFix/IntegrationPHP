@@ -236,3 +236,9 @@ margin: 0;
     position         : relative;
     margin-bottom    : 20px;
 }
+
+
+
+th a {
+    padding: 0;
+}
