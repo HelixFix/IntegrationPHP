@@ -40,8 +40,10 @@ $countFroid = $db->query($requeteFroid);
             </div>
         </div>
 
-        <a href="javascript:showtbl('chaud');">Chaud</a>
-        <a href="javascript:showtbl('froid');">Froid</a>
+        <button type="button" class="btn btn-danger" onclick="showtbl('chaud')"><img src="images/temperature-hot.svg" alt="">Chaud</button>
+        
+        <button type="button" class="btn btn-primary" onclick="showtbl('froid')"><img src="images/temperature-frigid.svg" alt=""> Froid</button>
+
         <table class="table table-striped table-hover" id="tbl_product">
 
 
