@@ -46,7 +46,20 @@ $countFroid = $db->query($requeteFroid);
             <th scope="col">Action</th>
             <th scope="col">Nom</th>
             <th scope="col">Descriptif</th>
-            <th scope="col" style="padding-left:0 "><button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri ascendant">⬇</button></th>
+            
+            <?php if( isset($_GET['order']) && $_GET['order'] != 'desc') {?>
+                <th scope="col" style="padding-left:0">
+                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant" >⬆</button>Prix<?php } ?>  
+                
+            <?php if( isset($_GET['order']) && $_GET['order'] != 'asc') {?>
+                <th scope="col">    
+                Prix<button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri décroisant">⬇</button>
+                <?php } 
+                else if (!isset($_GET['order'])) { ?> 
+                <th scope="col" style="padding-left:0">
+                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri croissant">⬇</button>
+                <?php } ?>    
+            </th>
             <th scope="col">Type</th>
             <th scope="col">Etat</th>
             <th scope="col">Cat.</th>
