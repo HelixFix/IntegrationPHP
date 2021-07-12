@@ -46,7 +46,7 @@ $countFroid = $db->query($requeteFroid);
             <th scope="col">Action</th>
             <th scope="col">Nom</th>
             <th scope="col">Descriptif</th>
-            <th scope="col" style="padding-left:0 "><button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')">⬇</button></th>
+            <th scope="col" style="padding-left:0 "><button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri ascendant">⬇</button></th>
             <th scope="col">Type</th>
             <th scope="col">Etat</th>
             <th scope="col">Cat.</th>
