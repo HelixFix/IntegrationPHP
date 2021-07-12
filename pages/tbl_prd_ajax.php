@@ -49,16 +49,19 @@ $countFroid = $db->query($requeteFroid);
             
             <?php if( isset($_GET['order']) && $_GET['order'] != 'desc') {?>
                 <th scope="col" style="padding-left:0">
-                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant" >⬆</button>Prix<?php } ?>  
+                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri décroisant" >⬆</button>&#32Prix<?php 
+            } ?>  
                 
             <?php if( isset($_GET['order']) && $_GET['order'] != 'asc') {?>
                 <th scope="col">    
-                Prix<button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri décroisant">⬇</button>
-                <?php } 
-                else if (!isset($_GET['order'])) { ?> 
+                Prix&#32<button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri croissant">⬇</button>
+            <?php } 
+
+            else if (!isset($_GET['order'])) { ?> 
                 <th scope="col" style="padding-left:0">
-                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri descendant">⬆</button> Prix <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri croissant">⬇</button>
-                <?php } ?>    
+                <button onclick="filterPrice('<?php echo $_GET['filter'] ?>','desc')"  title="Tri décroisant">⬆</button> 
+                &#32Prix&#32<button onclick="filterPrice('<?php echo $_GET['filter'] ?>','asc')" title="Tri croissant">⬇</button>
+            <?php } ?>    
             </th>
             <th scope="col">Type</th>
             <th scope="col">Etat</th>
