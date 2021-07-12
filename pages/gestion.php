@@ -34,7 +34,9 @@ $countFroid = $db->query($requeteFroid);
                     } ?>
                 </div>
                 <div class="col-sm-6">
-                    <a href="index.php?page=formprd" class="btn btn-success" data-toggle="modal"><span>Ajout nouveau produit</span></a>
+                    
+
+                    <button type="button" class="btn btn-success" onclick="window.location.href='index.php?page=formprd'"><img src="images/add.svg" alt="">Ajout nouveau produit</button>
 
                 </div>
             </div>
